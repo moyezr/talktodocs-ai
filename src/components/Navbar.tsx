@@ -9,6 +9,7 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ArrowRight } from "lucide-react";
 import UserAccountNav from "./UserAccountNav";
+import MobileNav from "./MobileNav";
 
 type Props = {};
 
@@ -22,10 +23,12 @@ const Navbar = (props: Props) => {
       <MaxWidthWrapper>
         <div className="flex h-14 items-center justify-between border-b border-zinc-200">
           <Link href={"/"} className="flex z-40 font-semibold">
-            <span className="text-[20px] font-bold tracking-tighter">TalkToDocs<span className="text-blue-500">AI</span></span>
+            <span className="text-[20px] font-bold tracking-tighter">
+              TalkToDocs<span className="text-blue-500">AI</span>
+            </span>
           </Link>
 
-          {/* Todo: add mobile navbar */}
+          <MobileNav isAuth={!!user} />
           <div className="hidden items-center space-x-4 sm:flex">
             {!user ? (
               <>
