@@ -13,7 +13,7 @@ export async function getUserSubscriptionPlan() {
 
   const user = getUser();
 
-  if (!user.id) {
+  if (!user?.id) {
     return {
       ...PLANS[0],
       isSubscribed: false,
