@@ -23,7 +23,7 @@ const PdfFullscreen = ({ url }: { url: string }) => {
       open={isOpen}
       onOpenChange={(v) => {
         if (!v) {
-          setIsOpen(prev => !prev);
+          setIsOpen((prev) => !prev);
         }
       }}
     >
@@ -61,6 +61,7 @@ const PdfFullscreen = ({ url }: { url: string }) => {
             >
               {new Array(numPages).fill(0).map((_, index) => (
                 <Page
+                  key={index}
                   width={width ? width : 1}
                   pageNumber={index + 1}
                   scale={scale}
